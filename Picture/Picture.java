@@ -13,9 +13,15 @@
 public class Picture
 {
     private Square wall;
-    private Square window;
+    private Square windowLeft;
+    private Square windowRight;
     private Triangle roof;
+    private Triangle tree;
+    private Triangle tree1;
     private Circle sun;
+    private Rectangle1 door;
+    private Rectangle1 frontMud;
+    private Rectangle1 chimmney;
 
     /**
      * Constructor for objects of class Picture
@@ -35,17 +41,69 @@ public class Picture
         wall.changeSize(100);
         wall.makeVisible();
 
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(20);
-        window.moveVertical(100);
-        window.makeVisible();
+        windowLeft = new Square();
+        windowLeft.changeColor("black");
+        windowLeft.moveHorizontal(10);
+        windowLeft.moveVertical(100);
+        windowLeft.makeVisible();
+        
+        windowRight = new Square();
+        windowRight.changeColor("black");
+        windowRight.moveHorizontal(60);
+        windowRight.moveVertical(100);
+        windowRight.makeVisible();
 
+        door = new Rectangle1();
+        door.changeColor("blue");
+        door.moveHorizontal(35);
+        door.moveVertical(140);
+        door.makeVisible();
+        
+        frontMud = new Rectangle1();
+        frontMud.changeSize(350,40);
+        frontMud.changeColor("yellow");
+        frontMud.moveHorizontal(-50);
+        frontMud.moveVertical(180);
+        frontMud.makeVisible();
+        Square stem;
+        stem = new Square();
+        stem.changeSize(15);
+        stem.changeColor("black");
+        stem.moveHorizontal(190);
+        stem.moveVertical(180);
+        stem.makeVisible();
+        
+        tree = new Triangle();
+        tree.changeSize(90, 30);
+        tree.moveHorizontal(210);
+        tree.moveVertical(135);
+        tree.makeVisible();
+        
+        stem = new Square();
+        stem.changeSize(15);
+        stem.changeColor("black");
+        stem.moveHorizontal(165);
+        stem.moveVertical(180);
+        stem.makeVisible();
+        tree1 = new Triangle();
+        tree1.changeSize(60, 30);
+        tree1.moveHorizontal(180);
+        tree1.moveVertical(165);
+        tree1.makeVisible();
+        
+        chimmney = new Rectangle1();
+        chimmney.changeSize(16,30);
+        chimmney.changeColor("black");
+        chimmney.moveHorizontal(75);
+        chimmney.moveVertical(40);
+        chimmney.makeVisible();
+        
         roof = new Triangle();
         roof.changeSize(50, 140);
         roof.moveHorizontal(60);
         roof.moveVertical(70);
         roof.makeVisible();
+
 
         sun = new Circle();
         sun.changeColor("yellow");
@@ -63,7 +121,8 @@ public class Picture
         if(wall != null)   // only if it's painted already...
         {
             wall.changeColor("black");
-            window.changeColor("white");
+            windowLeft.changeColor("white");
+            windowRight.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
         }
@@ -77,7 +136,8 @@ public class Picture
         if(wall != null)   // only if it's painted already...
         {
             wall.changeColor("red");
-            window.changeColor("black");
+            windowLeft.changeColor("black");
+            windowRight.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
